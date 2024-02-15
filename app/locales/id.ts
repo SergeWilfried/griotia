@@ -200,6 +200,10 @@ const id: PartialLocaleType = {
       Title: "Pratinjau Obrolan",
       SubTitle: "Pratinjau Obrolan dengan markdown",
     },
+    AutoScrollMessage: {
+      Title: "Balasan Auto-Scroll",
+      SubTitle: "Gulir pesan saat membalas",
+    },
     Mask: {
       Splash: {
         Title: "Layar Pembuka Masks",

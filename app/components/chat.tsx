@@ -406,12 +406,13 @@ function useScrollToBottom() {
   // for auto-scroll
   const scrollRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
-
+  const config = useAppConfig();
+  let isAutoScrollEnabled: boolean = config.autoScrollMessage;
   function scrollDomToBottom() {
     const dom = scrollRef.current;
     if (dom) {
       requestAnimationFrame(() => {
-        setAutoScroll(true);
+        setAutoScroll(isAutoScrollEnabled);
         dom.scrollTo(0, dom.scrollHeight);
       });
     }
@@ -1100,7 +1101,8 @@ function _Chat() {
     }
 
     setHitBottom(isHitBottom);
-    setAutoScroll(isHitBottom);
+    let isAutoScrollEnabled: boolean = config.autoScrollMessage;
+    setAutoScroll(isAutoScrollEnabled);
   };
 
   function scrollToBottom() {
