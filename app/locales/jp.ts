@@ -32,6 +32,8 @@ const jp: PartialLocaleType = {
       PinToastAction: "表示",
       Delete: "削除",
       Edit: "編集",
+      Play: 'Ecouter'
+
     },
     Rename: "チャットの名前を変更",
     Typing: "入力中…",

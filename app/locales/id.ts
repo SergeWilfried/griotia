@@ -30,6 +30,7 @@ const id: PartialLocaleType = {
       Pin: "Pin",
       PinToastContent: "2 pesan telah ditandai",
       PinToastAction: "Lihat",
+      Play: 'Ecouter',
       Delete: "Hapus",
       Edit: "Edit",
     },

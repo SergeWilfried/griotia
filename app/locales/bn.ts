@@ -30,6 +30,7 @@ const bn: PartialLocaleType = {
       Pin: "পিন করুন",
       PinToastContent: "পিন করা হয়েছে ২টি বার্তা প্রম্পটে",
       PinToastAction: "দেখুন",
+      Play: 'Ecouter',
       Delete: "মুছে ফেলুন",
       Edit: "সম্পাদন করুন",
     },

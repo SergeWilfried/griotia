@@ -45,6 +45,8 @@ const sk: PartialLocaleType = {
       PinToastAction: "Zobraziť",
       Delete: "Vymazať",
       Edit: "Upraviť",
+      Play: 'Ecouter'
+
     },
     Commands: {
       new: "Začať nový chat",

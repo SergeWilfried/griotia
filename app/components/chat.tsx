@@ -25,6 +25,8 @@ import SettingsIcon from "../icons/chat-settings.svg";
 import ClearIcon from "../icons/clear.svg";
 import CloseIcon from "../icons/close.svg";
 import PinIcon from "../icons/pin.svg";
+import AudioPlayerIcon from "../icons/audio-player.svg";
+
 import EditIcon from "../icons/rename.svg";
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
@@ -1005,6 +1007,19 @@ function _Chat() {
     });
   };
 
+  const onPlayMessage = (message: ChatMessage) => {
+    chatStore.updateCurrentSession((session) =>
+      session.mask.context.push(message),
+    );
+
+    showToast(Locale.Chat.Actions.PinToastContent, {
+      text: Locale.Chat.Actions.PinToastAction,
+      onClick: () => {
+        setShowPromptModal(true);
+      },
+    });
+  };
+
   const context: RenderMessage[] = useMemo(() => {
     return session.mask.hideContext ? [] : session.mask.context.slice();
   }, [session.mask.context, session.mask.hideContext]);
@@ -1374,6 +1389,11 @@ function _Chat() {
                                 text={Locale.Chat.Actions.Copy}
                                 icon={<CopyIcon />}
                                 onClick={() => copyToClipboard(message.content)}
+                              />
+                               <ChatAction
+                                text={Locale.Chat.Actions.Play}
+                                icon={<AudioPlayerIcon />}
+                                onClick={() => onPlayMessage(message)}
                               />
                             </>
                           )}

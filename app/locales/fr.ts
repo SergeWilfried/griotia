@@ -24,6 +24,7 @@ const fr: PartialLocaleType = {
       PinToastContent: "Épingler 2 messages à des messages contextuels",
       PinToastAction: "Voir",
       Edit: "Modifier",
+      Play: 'Ecouter'
     },
     Commands: {
       new: "Commencer une nouvelle conversation",
@@ -244,7 +245,7 @@ const fr: PartialLocaleType = {
     Sysmessage: "Eres un asistente que",
   },
   Mask: {
-    Name: "Masque",
+    Name: "Tuteur",
     Page: {
       Title: "Modèle de prompt",
       SubTitle: (count: number) => `${count} modèles de prompts`,

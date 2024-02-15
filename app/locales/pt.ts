@@ -41,6 +41,7 @@ const pt: PartialLocaleType = {
       Pin: "Fixar",
       PinToastContent: "Fixada 1 mensagem para prompts contextuais",
       PinToastAction: "Visualizar",
+      Play: 'Ecouter',
       Delete: "Deletar",
       Edit: "Editar",
     },
