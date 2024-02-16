@@ -37,7 +37,12 @@ export const DEFAULT_CONFIG = {
   autoScrollMessage: true,
   enableAutoGenerateTitle: true,
   sidebarWidth: DEFAULT_SIDEBAR_WIDTH,
-  enableVoiceFeature: false,
+  voice: {
+    enabled: false,
+    subscriptionKey: "",
+    speechRecognitionLanguage: "zh-CN",
+    speechSynthesisVoiceName: "zh-CN-XiaoshuangNeural", // 使用 Azure 提供的声音名列表，选择合适的声音"
+  },
   disablePromptHint: false,
 
   dontShowMaskSplashScreen: false, // dont show splash screen when create chat

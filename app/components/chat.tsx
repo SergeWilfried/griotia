@@ -462,7 +462,7 @@ export function ChatActions(props: {
     });
   }
 
-  const isVoiceEnabled = config.enableVoiceFeature;
+  const isVoiceEnabled = config.voice.enabled;
   const useTTS = chatStore.currentSession().enableTTS;
   const useSTT = chatStore.currentSession().enableSTT;
 
