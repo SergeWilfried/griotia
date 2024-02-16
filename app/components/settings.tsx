@@ -832,11 +832,11 @@ export function Settings() {
           >
             <input
               type="checkbox"
-              checked={config.enableTTS}
+              checked={config.enableVoiceFeature}
               onChange={(e) =>
                 updateConfig(
                   (config) =>
-                    (config.enableTTS = e.currentTarget.checked),
+                    (config.enableVoiceFeature = e.currentTarget.checked),
                 )
               }
             ></input>
