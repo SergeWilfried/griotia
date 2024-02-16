@@ -1447,11 +1447,13 @@ function _Chat() {
                                 icon={<CopyIcon />}
                                 onClick={() => copyToClipboard(message.content)}
                               />
-                              <ChatAction
-                                text={Locale.Chat.Actions.Play}
-                                icon={<AudioPlayerPlayIcon />}
-                                onClick={() => copyToClipboard(message.content)}
-                              />
+                              {config.voice.active && (
+                                <ChatAction
+                                  text={Locale.Chat.Actions.Play}
+                                  icon={<AudioPlayerPlayIcon />}
+                                  onClick={() => copyToClipboard(message.content)}
+                                />
+                              )}
                             </>
                           )}
                         </div>

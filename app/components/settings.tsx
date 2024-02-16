@@ -633,6 +633,7 @@ export function Settings() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
+  const enabledVoiceFeatures = useMemo(()=> config.voice.enabled,[])
 
   const promptStore = usePromptStore();
   const builtinCount = SearchService.count.builtin;
