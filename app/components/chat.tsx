@@ -470,9 +470,6 @@ export function ChatActions(props: {
     config.update((config) => (config.enableTTS = !isSTTEnabled));
   }
 
-  function enableVoicePlugins(){
-    config.update((config) => (config.enableTTS = !isTTSEnabled));
-  }
 
   // switch themes
   const theme = config.theme;
@@ -1596,7 +1593,7 @@ function _Chat() {
            {isTTSEnabled && (
             <IconButton
               icon={<EnableSTTIcon />}
-              text=" "
+              text=""
               className={styles["chat-input-voice"]}
               type="primary"
               onClick={() => doVoiceSubmit()}
