@@ -841,6 +841,60 @@ export function Settings() {
               }
             ></input>
           </ListItem>
+          {config.voice.enabled && (
+            <>
+              <ListItem
+                title={Locale.Settings.VoiceConfig.SubscriptionKey.Title}
+                subTitle={Locale.Settings.VoiceConfig.SubscriptionKey.SubTitle}
+              >
+    <PasswordInput
+                          value={accessStore.azurespeechsubscriptionKey}
+                          type="text"
+                          placeholder={
+                            Locale.Settings.Access.Azure.ApiKey.Placeholder
+                          }
+                          onChange={(e) => {
+                            accessStore.update(
+                              (access) =>
+                                (access.azurespeechsubscriptionKey = e.currentTarget.value),
+                            );
+                          }}
+                        />
+              </ListItem>
+              <ListItem
+                title={Locale.Settings.VoiceConfig.SpeechRecognitionLanguage.Title}
+                subTitle={Locale.Settings.VoiceConfig.SpeechRecognitionLanguage.SubTitle}
+              >
+                   <input
+                          type="text"
+                          value={accessStore.azurespeech.langName}
+                          placeholder={Azure.ExampleEndpoint}
+                          onChange={(e) =>
+                            accessStore.update(
+                              (access) =>
+                                (access.azurespeech.langName = e.currentTarget.value),
+                            )
+                          }
+                        ></input>
+              </ListItem>
+              <ListItem
+                title={Locale.Settings.VoiceConfig.SpeechSynthesisVoiceName.Title}
+                subTitle={Locale.Settings.VoiceConfig.SpeechSynthesisVoiceName.SubTitle}
+              >
+                     <input
+                          type="text"
+                          value={accessStore.azurespeech.voiceName}
+                          placeholder={Azure.ExampleEndpoint}
+                          onChange={(e) =>
+                            accessStore.update(
+                              (access) =>
+                                (access.azurespeech.voiceName = e.currentTarget.value),
+                            )
+                          }
+                        ></input>
+              </ListItem>
+            </>
+          )}
 
           <ListItem
             title={Locale.Settings.SendPreviewBubble.Title}

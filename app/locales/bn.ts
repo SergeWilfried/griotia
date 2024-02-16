@@ -127,6 +127,20 @@ const bn: PartialLocaleType = {
   Settings: {
     Title: "সেটিংস",
     SubTitle: "সমস্ত সেটিংস",
+    VoiceConfig: {
+      SpeechRecognitionLanguage: {
+        Title: "Speech Recognition Language",
+        SubTitle: "Set Speech Recognition Language"
+      },
+      SpeechSynthesisVoiceName: {
+        Title: "Speech Synthesis Voice",
+        SubTitle: "Set Speech Synthesis Voice Name"
+      },
+      SubscriptionKey: {
+        Title: "SubscriptionKey",
+        SubTitle: "Send Voice Message"
+      }
+    },
     EnableTTS: {
       Title: "Enable Voice",
       SubTitle: "Send Voice Message"

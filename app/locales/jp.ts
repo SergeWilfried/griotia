@@ -105,6 +105,20 @@ const jp: PartialLocaleType = {
   Settings: {
     Title: "設定",
     SubTitle: "設定オプション",
+    VoiceConfig: {
+      SpeechRecognitionLanguage: {
+        Title: "Speech Recognition Language",
+        SubTitle: "Set Speech Recognition Language"
+      },
+      SpeechSynthesisVoiceName: {
+        Title: "Speech Synthesis Voice",
+        SubTitle: "Set Speech Synthesis Voice Name"
+      },
+      SubscriptionKey: {
+        Title: "SubscriptionKey",
+        SubTitle: "Send Voice Message"
+      }
+    },
     EnableTTS: {
       Title: "Enable Voice",
       SubTitle: "Send Voice Message"

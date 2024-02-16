@@ -99,6 +99,20 @@ const fr: PartialLocaleType = {
   Settings: {
     Title: "Paramètres",
     SubTitle: "Toutes les configurations",
+    VoiceConfig: {
+      SpeechRecognitionLanguage: {
+        Title: "Speech Recognition Language",
+        SubTitle: "Set Speech Recognition Language"
+      },
+      SpeechSynthesisVoiceName: {
+        Title: "Speech Synthesis Voice",
+        SubTitle: "Set Speech Synthesis Voice Name"
+      },
+      SubscriptionKey: {
+        Title: "SubscriptionKey",
+        SubTitle: "Send Voice Message"
+      }
+    },
     EnableTTS: {
       Title: "Activer la voix",
       SubTitle: "Activer pour envoyer des messages vocaux"
