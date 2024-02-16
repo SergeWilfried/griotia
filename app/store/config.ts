@@ -39,9 +39,8 @@ export const DEFAULT_CONFIG = {
   sidebarWidth: DEFAULT_SIDEBAR_WIDTH,
   voice: {
     enabled: false,
-    active: true,
+    active: false,
     subscriptionKey: "",
-    
     speechRecognitionLanguage: "zh-CN",
     speechSynthesisVoiceName: "zh-CN-XiaoshuangNeural", // 使用 Azure 提供的声音名列表，选择合适的声音"
   },
