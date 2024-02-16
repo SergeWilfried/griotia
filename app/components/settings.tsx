@@ -826,7 +826,78 @@ export function Settings() {
             ></input>
           </ListItem>
 
+
           <ListItem
+            title={Locale.Settings.SendPreviewBubble.Title}
+            subTitle={Locale.Settings.SendPreviewBubble.SubTitle}
+          >
+            <input
+              type="checkbox"
+              checked={config.sendPreviewBubble}
+              onChange={(e) =>
+                updateConfig(
+                  (config) =>
+                    (config.sendPreviewBubble = e.currentTarget.checked),
+                )
+              }
+            ></input>
+          </ListItem>
+          <ListItem
+            title={Locale.Settings.AutoScrollMessage.Title}
+            subTitle={Locale.Settings.AutoScrollMessage.SubTitle}
+          >
+            <input
+              type="checkbox"
+              checked={config.autoScrollMessage}
+              onChange={(e) =>
+                updateConfig(
+                  (config) =>
+                    (config.autoScrollMessage = e.currentTarget.checked),
+                )
+              }
+            ></input>
+          </ListItem>
+        </List>
+
+        <SyncItems />
+
+        <List>
+          <ListItem
+            title={Locale.Settings.Mask.Splash.Title}
+            subTitle={Locale.Settings.Mask.Splash.SubTitle}
+          >
+            <input
+              type="checkbox"
+              checked={!config.dontShowMaskSplashScreen}
+              onChange={(e) =>
+                updateConfig(
+                  (config) =>
+                    (config.dontShowMaskSplashScreen =
+                      !e.currentTarget.checked),
+                )
+              }
+            ></input>
+          </ListItem>
+
+          <ListItem
+            title={Locale.Settings.Mask.Builtin.Title}
+            subTitle={Locale.Settings.Mask.Builtin.SubTitle}
+          >
+            <input
+              type="checkbox"
+              checked={config.hideBuiltinMasks}
+              onChange={(e) =>
+                updateConfig(
+                  (config) =>
+                    (config.hideBuiltinMasks = e.currentTarget.checked),
+                )
+              }
+            ></input>
+          </ListItem>
+        </List>
+        <List>
+
+        <ListItem
             title={Locale.Settings.EnableTTS.Title}
             subTitle={Locale.Settings.EnableTTS.SubTitle}
           >
@@ -902,74 +973,6 @@ export function Settings() {
               </ListItem>
             </>
           )}
-
-          <ListItem
-            title={Locale.Settings.SendPreviewBubble.Title}
-            subTitle={Locale.Settings.SendPreviewBubble.SubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={config.sendPreviewBubble}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.sendPreviewBubble = e.currentTarget.checked),
-                )
-              }
-            ></input>
-          </ListItem>
-          <ListItem
-            title={Locale.Settings.AutoScrollMessage.Title}
-            subTitle={Locale.Settings.AutoScrollMessage.SubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={config.autoScrollMessage}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.autoScrollMessage = e.currentTarget.checked),
-                )
-              }
-            ></input>
-          </ListItem>
-        </List>
-
-        <SyncItems />
-
-        <List>
-          <ListItem
-            title={Locale.Settings.Mask.Splash.Title}
-            subTitle={Locale.Settings.Mask.Splash.SubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={!config.dontShowMaskSplashScreen}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.dontShowMaskSplashScreen =
-                      !e.currentTarget.checked),
-                )
-              }
-            ></input>
-          </ListItem>
-
-          <ListItem
-            title={Locale.Settings.Mask.Builtin.Title}
-            subTitle={Locale.Settings.Mask.Builtin.SubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={config.hideBuiltinMasks}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.hideBuiltinMasks = e.currentTarget.checked),
-                )
-              }
-            ></input>
-          </ListItem>
         </List>
 
         <List>
