@@ -4,6 +4,7 @@ import Locale, { getLang } from "../locales";
 import { showToast } from "../components/ui-lib";
 import { ModelConfig, ModelType, useAppConfig } from "./config";
 import { createEmptyMask, Mask } from "./mask";
+import convertTextToSpeech from "../components/tts";
 import {
   DEFAULT_INPUT_TEMPLATE,
   DEFAULT_MODELS,
@@ -372,6 +373,9 @@ export const useChatStore = createPersistStore(
             onFinish(message) {
               botMessage.streaming = false;
               if (message) {
+                if (!message.startsWith("http")) {
+                  convertTextToSpeech(message);
+                }
                 botMessage.content = message;
                 get().onNewMessage(botMessage);
               }
@@ -427,6 +431,9 @@ export const useChatStore = createPersistStore(
             onFinish(message) {
               botMessage.streaming = false;
               if (message) {
+                if (!message.startsWith("http")) {
+                  convertTextToSpeech(message);
+                }
                 botMessage.content = message;
                 get().onNewMessage(botMessage);
               }

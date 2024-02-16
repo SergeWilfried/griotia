@@ -7,8 +7,9 @@ import React, {
   useCallback,
   Fragment,
 } from "react";
-
+import recognizeSpeech from "./ltt";
 import SendWhiteIcon from "../icons/send-white.svg";
+import StartRecord from "../icons/record.svg";
 import BrainIcon from "../icons/brain.svg";
 import RenameIcon from "../icons/rename.svg";
 import ExportIcon from "../icons/share.svg";
@@ -750,7 +751,7 @@ function _Chat() {
   const session = chatStore.currentSession();
   const config = useAppConfig();
   const fontSize = config.fontSize;
-
+  const isTTSEnabled = config.enableTTS;
   const [showExport, setShowExport] = useState(false);
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -827,6 +828,17 @@ function _Chat() {
         onSearch(searchText);
       }
     }
+  };
+
+  const doVoiceSubmit = () => {
+    recognizeSpeech()
+      .then((text) => {
+        console.log("识别的文字是：", text);
+        doSubmit(text);
+      })
+      .catch((error) => {
+        console.error("语音识别过程中出现错误：", error);
+      });
   };
 
   const doSubmit = (userInput: string, userImage?: any) => {
@@ -1537,13 +1549,25 @@ function _Chat() {
               </button>
             </div>
           )}
-          <IconButton
-            icon={<SendWhiteIcon />}
-            text={Locale.Chat.Send}
-            className={styles["chat-input-send"]}
-            type="primary"
-            onClick={() => doSubmit(userInput, userImage)}
-          />
+       
+            {!isTTSEnabled && (
+            <IconButton
+              icon={<SendWhiteIcon />}
+              text={Locale.Chat.Send}
+              className={styles["chat-input-send"]}
+              type="primary"
+              onClick={() => doSubmit(userInput, userImage)}
+            />
+         )} 
+           {isTTSEnabled && (
+            <IconButton
+              icon={<StartRecord />}
+              text="语音输入"
+              className={styles["chat-input-voice"]}
+              type="primary"
+              onClick={() => doVoiceSubmit()}
+            />
+         )}     
         </div>
       </div>
 

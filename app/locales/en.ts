@@ -134,6 +134,10 @@ const en: LocaleType = {
   Settings: {
     Title: "Settings",
     SubTitle: "All Settings",
+    EnableTTS: {
+      Title: "Enable Voice",
+      SubTitle: "Send Voice Message"
+    }, 
     Danger: {
       Reset: {
         Title: "Reset All Settings",
