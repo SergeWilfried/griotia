@@ -832,15 +832,76 @@ export function Settings() {
           >
             <input
               type="checkbox"
-              checked={config.enableVoiceFeature}
+              checked={config.voice.enabled}
               onChange={(e) =>
                 updateConfig(
                   (config) =>
-                    (config.enableVoiceFeature = e.currentTarget.checked),
+                    (config.voice.enabled = e.currentTarget.checked),
                 )
               }
             ></input>
           </ListItem>
+          {config.voice.enabled && (
+            <>
+              <ListItem
+                title={Locale.Settings.VoiceConfig.SubscriptionKey.Title}
+                subTitle={Locale.Settings.VoiceConfig.SubscriptionKey.SubTitle}
+              >
+    <PasswordInput
+                          value={config.voice.subscriptionKey}
+                          type="text"
+                          placeholder={
+                            Locale.Settings.Access.Azure.ApiKey.Placeholder
+                          }
+                          onChange={(e) => {
+                            
+                            updateConfig(
+                              (config) =>
+                                (config.voice.subscriptionKey = e.currentTarget.value),
+                            )
+                            updateConfig(
+                              (config) =>
+                                (config.voice.active = true),
+                            )
+                          }}
+                        />
+              </ListItem>
+              <ListItem
+                title={Locale.Settings.VoiceConfig.SpeechRecognitionLanguage.Title}
+                subTitle={Locale.Settings.VoiceConfig.SpeechRecognitionLanguage.SubTitle}
+              >
+                   <input
+                          type="text"
+                          value={config.voice.speechRecognitionLanguage}
+                          placeholder={Azure.ExampleEndpoint}
+                          onChange={(e) =>
+                      
+                            updateConfig(
+                              (config) =>
+                                (config.voice.speechRecognitionLanguage = e.currentTarget.value),
+                            )
+                          }
+                        ></input>
+              </ListItem>
+              <ListItem
+                title={Locale.Settings.VoiceConfig.SpeechSynthesisVoiceName.Title}
+                subTitle={Locale.Settings.VoiceConfig.SpeechSynthesisVoiceName.SubTitle}
+              >
+                     <input
+                          type="text"
+                          value={config.voice.speechSynthesisVoiceName}
+                          placeholder={Azure.ExampleEndpoint}
+                          onChange={(e) =>
+                           
+                            updateConfig(
+                              (config) =>
+                                (config.voice.speechSynthesisVoiceName = e.currentTarget.value),
+                            )
+                          }
+                        ></input>
+              </ListItem>
+            </>
+          )}
 
           <ListItem
             title={Locale.Settings.SendPreviewBubble.Title}

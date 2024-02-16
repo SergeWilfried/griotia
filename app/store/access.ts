@@ -19,7 +19,6 @@ const DEFAULT_OPENAI_URL =
 const DEFAULT_ACCESS_STATE = {
   accessCode: "",
   useCustomConfig: false,
-
   provider: ServiceProvider.OpenAI,
 
   // openai
@@ -30,6 +29,11 @@ const DEFAULT_ACCESS_STATE = {
   azureUrl: "",
   azureApiKey: "",
   azureApiVersion: "2023-08-01-preview",
+  azurespeechsubscriptionKey: "",
+  azurespeech: {
+    voiceName: "",
+    langName: ""
+  },
 
   // google ai studio
   googleBaseUrl: "",
