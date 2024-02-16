@@ -54,6 +54,10 @@ const id: PartialLocaleType = {
       Masks: "Masks",
       Clear: "Bersihkan Percakapan",
       Settings: "Pengaturan",
+      EnableTTSPlugins: '',
+      DisableTTSPlugins: '',
+      EnableSTTPlugins: '',
+      DisableSTTPlugins: ""
     },
     Rename: "Ubah Nama Chat",
     Typing: "Mengetik...",

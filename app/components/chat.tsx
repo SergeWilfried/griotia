@@ -9,7 +9,9 @@ import React, {
 } from "react";
 import recognizeSpeech from "./ltt";
 import SendWhiteIcon from "../icons/send-white.svg";
-import StartRecord from "../icons/record.svg";
+import EnableSTTIcon from "../icons/mic.svg";
+import DisableSTTIcon from "../icons/mic-off.svg";
+
 import BrainIcon from "../icons/brain.svg";
 import RenameIcon from "../icons/rename.svg";
 import ExportIcon from "../icons/share.svg";
@@ -26,7 +28,10 @@ import SettingsIcon from "../icons/chat-settings.svg";
 import ClearIcon from "../icons/clear.svg";
 import CloseIcon from "../icons/close.svg";
 import PinIcon from "../icons/pin.svg";
-import AudioPlayerIcon from "../icons/audio-player.svg";
+import AudioPlayerPlayIcon from "../icons/player-play.svg";
+import AudioPlayerPauseIcon from "../icons/player-pause.svg";
+import EnableTTSIcon from "../icons/speaker-enabled.svg";
+import DisableTTSIcon from "../icons/speaker-disabled.svg";
 
 import EditIcon from "../icons/rename.svg";
 import ConfirmIcon from "../icons/confirm.svg";
@@ -456,6 +461,18 @@ export function ChatActions(props: {
       session.mask.usePlugins = !session.mask.usePlugins;
     });
   }
+  const isTTSEnabled = config.enableTTS;
+  const isSTTEnabled = config.enableSTT;
+  function enableTTSPlugins(){
+    config.update((config) => (config.enableTTS = !isTTSEnabled));
+  }
+  function enableSTTPlugins(){
+    config.update((config) => (config.enableTTS = !isSTTEnabled));
+  }
+
+  function enableVoicePlugins(){
+    config.update((config) => (config.enableTTS = !isTTSEnabled));
+  }
 
   // switch themes
   const theme = config.theme;
@@ -624,7 +641,30 @@ export function ChatActions(props: {
               icon={usePlugins ? <EnablePluginIcon /> : <DisablePluginIcon />}
             />
           )}
-        {currentModel == "gpt-4-vision-preview" && (
+        
+        {isSTTEnabled && (
+          <ChatAction
+            onClick={enableSTTPlugins}
+            text={
+              isTTSEnabled
+                ? Locale.Chat.InputActions.DisableSTTPlugins
+                : Locale.Chat.InputActions.EnableSTTPlugins
+            }            
+            icon={isTTSEnabled ? <EnableSTTIcon /> : <DisableSTTIcon />}
+          />
+        )}
+         {isTTSEnabled && (
+          <ChatAction
+            onClick={enableTTSPlugins}
+            text={
+              isTTSEnabled
+                ? Locale.Chat.InputActions.DisableTTSPlugins
+                : Locale.Chat.InputActions.EnableTTSPlugins
+            }            
+            icon={isTTSEnabled ? <EnableTTSIcon /> : <DisableTTSIcon />}
+          />
+        )}
+         {currentModel == "gpt-4-vision-preview" && (
           <ChatAction
             onClick={selectImage}
             text="选择图片"
@@ -1402,11 +1442,7 @@ function _Chat() {
                                 icon={<CopyIcon />}
                                 onClick={() => copyToClipboard(message.content)}
                               />
-                               <ChatAction
-                                text={Locale.Chat.Actions.Play}
-                                icon={<AudioPlayerIcon />}
-                                onClick={() => onPlayMessage(message)}
-                              />
+                            
                             </>
                           )}
                         </div>
@@ -1561,8 +1597,8 @@ function _Chat() {
          )} 
            {isTTSEnabled && (
             <IconButton
-              icon={<StartRecord />}
-              text="语音输入"
+              icon={<EnableSTTIcon />}
+              text=" "
               className={styles["chat-input-voice"]}
               type="primary"
               onClick={() => doVoiceSubmit()}

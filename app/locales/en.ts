@@ -68,6 +68,10 @@ const en: LocaleType = {
       Settings: "Settings",
       EnablePlugins: "Enable Plugins",
       DisablePlugins: "Disable Plugins",
+      EnableTTSPlugins: 'Enable Transcription',
+      DisableTTSPlugins: 'Disable Transcription',
+      EnableSTTPlugins: 'Enable Voice',
+      DisableSTTPlugins: "Disable Voice"
     },
     Rename: "Rename Chat",
     Typing: "Typing…",

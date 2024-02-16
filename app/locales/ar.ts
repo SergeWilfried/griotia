@@ -41,6 +41,10 @@ const ar: PartialLocaleType = {
       Masks: "الأقنعة",
       Clear: "مسح السياق",
       Settings: "الإعدادات",
+      EnableTTSPlugins: '',
+      DisableTTSPlugins: '',
+      EnableSTTPlugins: '',
+      DisableSTTPlugins: ""
     },
     Rename: "إعادة تسمية الدردشة",
     Typing: "كتابة...",

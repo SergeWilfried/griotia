@@ -46,6 +46,10 @@ const fr: PartialLocaleType = {
       Masks: "Assistants",
       Clear: "Effacer le contexte",
       Settings: "Réglages",
+      EnableTTSPlugins: 'Activer Transcription',
+      DisableTTSPlugins: 'Desactiver Transcription',
+      EnableSTTPlugins: 'Activer Voix',
+      DisableSTTPlugins: "Desactiver Voix"
     },
     Rename: "Renommer la conversation",
     Typing: "En train d'écrire…",

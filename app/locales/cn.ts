@@ -66,6 +66,10 @@ const cn = {
       Settings: "对话设置",
       EnablePlugins: "开启插件",
       DisablePlugins: "关闭插件",
+      EnableTTSPlugins: '',
+      DisableTTSPlugins: '',
+      EnableSTTPlugins: '',
+      DisableSTTPlugins: ""
     },
     Rename: "重命名对话",
     Typing: "正在输入…",
