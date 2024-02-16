@@ -63,7 +63,7 @@ const fr: PartialLocaleType = {
     Send: "Envoyer",
     Config: {
       Reset: "Restaurer les paramètres par défaut",
-      SaveAs: "Enregistrer en tant que masque",
+      SaveAs: "Enregistrer en tant que tuteur",
     },
   },
   Stats: {
@@ -158,9 +158,9 @@ const fr: PartialLocaleType = {
     },
     Mask: {
       Splash: {
-        Title: "Écran de masque",
+        Title: "Écran des tuteurs",
         SubTitle:
-          "Afficher un écran de masque avant de démarrer une nouvelle discussion",
+          "Afficher un écran de tuteur avant de démarrer une nouvelle discussion",
       },
       Builtin: {
         Title: "Masquer Les Assistants Intégrés",
@@ -295,8 +295,8 @@ const fr: PartialLocaleType = {
         SubTitle: "Ne pas afficher les instructions contextuelles dans le chat",
       },
       Share: {
-        Title: "Partager ce masque",
-        SubTitle: "Générer un lien vers ce masque",
+        Title: "Partager ce tuteur",
+        SubTitle: "Générer un lien vers ce tuteur",
         Action: "Copier le lien",
       },
     },
@@ -305,7 +305,7 @@ const fr: PartialLocaleType = {
     Return: "Retour",
     Skip: "Passer",
     Title: "Choisir un assitant",
-    SubTitle: "Discutez avec l'âme derrière le masque",
+    SubTitle: "Discutez avec votre tuteur IA",
     More: "En savoir plus",
     NotShow: "Ne pas afficher à nouveau",
     ConfirmNoShow:
