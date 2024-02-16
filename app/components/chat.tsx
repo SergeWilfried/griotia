@@ -642,7 +642,6 @@ export function ChatActions(props: {
             />
           )}
         
-        {isSTTEnabled && (
           <ChatAction
             onClick={enableSTTPlugins}
             text={
@@ -652,8 +651,7 @@ export function ChatActions(props: {
             }            
             icon={isTTSEnabled ? <EnableSTTIcon /> : <DisableSTTIcon />}
           />
-        )}
-         {isTTSEnabled && (
+      
           <ChatAction
             onClick={enableTTSPlugins}
             text={
@@ -663,7 +661,7 @@ export function ChatActions(props: {
             }            
             icon={isTTSEnabled ? <EnableTTSIcon /> : <DisableTTSIcon />}
           />
-        )}
+        
          {currentModel == "gpt-4-vision-preview" && (
           <ChatAction
             onClick={selectImage}
