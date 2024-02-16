@@ -1593,7 +1593,7 @@ function _Chat() {
            {isTTSEnabled && (
             <IconButton
               icon={<EnableSTTIcon />}
-              text=" "
+              text=""
               className={styles["chat-input-voice"]}
               type="primary"
               onClick={() => doVoiceSubmit()}
