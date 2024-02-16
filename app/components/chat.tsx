@@ -9,7 +9,9 @@ import React, {
 } from "react";
 import recognizeSpeech from "./ltt";
 import SendWhiteIcon from "../icons/send-white.svg";
-import StartRecord from "../icons/record.svg";
+import EnableTTSIcon from "../icons/mic.svg";
+import DisableTTSIcon from "../icons/mic-off.svg";
+
 import BrainIcon from "../icons/brain.svg";
 import RenameIcon from "../icons/rename.svg";
 import ExportIcon from "../icons/share.svg";
@@ -456,6 +458,10 @@ export function ChatActions(props: {
       session.mask.usePlugins = !session.mask.usePlugins;
     });
   }
+  const isTTSEnabled = config.enableTTS;
+  function enableVoicePlugins(){
+    config.update((config) => (config.enableTTS = !isTTSEnabled));
+  }
 
   // switch themes
   const theme = config.theme;
@@ -624,7 +630,19 @@ export function ChatActions(props: {
               icon={usePlugins ? <EnablePluginIcon /> : <DisablePluginIcon />}
             />
           )}
-        {currentModel == "gpt-4-vision-preview" && (
+        
+        {config.enableTTS && (
+          <ChatAction
+            onClick={enableVoicePlugins}
+            text={
+              isTTSEnabled
+                ? Locale.Chat.InputActions.DisablePlugins
+                : Locale.Chat.InputActions.EnablePlugins
+            }            
+            icon={isTTSEnabled ? <EnableTTSIcon /> : <DisableTTSIcon />}
+          />
+        )}
+         {currentModel == "gpt-4-vision-preview" && (
           <ChatAction
             onClick={selectImage}
             text="选择图片"
@@ -1561,8 +1579,8 @@ function _Chat() {
          )} 
            {isTTSEnabled && (
             <IconButton
-              icon={<StartRecord />}
-              text="语音输入"
+              icon={<EnableTTSIcon />}
+              text=" "
               className={styles["chat-input-voice"]}
               type="primary"
               onClick={() => doVoiceSubmit()}
