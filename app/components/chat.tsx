@@ -9,8 +9,8 @@ import React, {
 } from "react";
 import recognizeSpeech from "./ltt";
 import SendWhiteIcon from "../icons/send-white.svg";
-import EnableTTSIcon from "../icons/mic.svg";
-import DisableTTSIcon from "../icons/mic-off.svg";
+import EnableSTTIcon from "../icons/mic.svg";
+import DisableSTTIcon from "../icons/mic-off.svg";
 
 import BrainIcon from "../icons/brain.svg";
 import RenameIcon from "../icons/rename.svg";
@@ -28,7 +28,10 @@ import SettingsIcon from "../icons/chat-settings.svg";
 import ClearIcon from "../icons/clear.svg";
 import CloseIcon from "../icons/close.svg";
 import PinIcon from "../icons/pin.svg";
-import AudioPlayerIcon from "../icons/audio-player.svg";
+import AudioPlayerPlayIcon from "../icons/player-play.svg";
+import AudioPlayerPauseIcon from "../icons/player-pause.svg";
+import EnableTTSIcon from "../icons/speaker-enabled.svg";
+import DisableTTSIcon from "../icons/speaker-disabled.svg";
 
 import EditIcon from "../icons/rename.svg";
 import ConfirmIcon from "../icons/confirm.svg";
@@ -459,6 +462,14 @@ export function ChatActions(props: {
     });
   }
   const isTTSEnabled = config.enableTTS;
+  const isSTTEnabled = config.enableSTT;
+  function enableTTSPlugins(){
+    config.update((config) => (config.enableTTS = !isTTSEnabled));
+  }
+  function enableSTTPlugins(){
+    config.update((config) => (config.enableTTS = !isSTTEnabled));
+  }
+
   function enableVoicePlugins(){
     config.update((config) => (config.enableTTS = !isTTSEnabled));
   }
@@ -631,13 +642,24 @@ export function ChatActions(props: {
             />
           )}
         
-        {config.enableTTS && (
+        {isSTTEnabled && (
           <ChatAction
-            onClick={enableVoicePlugins}
+            onClick={enableSTTPlugins}
             text={
               isTTSEnabled
-                ? Locale.Chat.InputActions.DisablePlugins
-                : Locale.Chat.InputActions.EnablePlugins
+                ? Locale.Chat.InputActions.DisableSTTPlugins
+                : Locale.Chat.InputActions.EnableSTTPlugins
+            }            
+            icon={isTTSEnabled ? <EnableSTTIcon /> : <DisableSTTIcon />}
+          />
+        )}
+         {isTTSEnabled && (
+          <ChatAction
+            onClick={enableTTSPlugins}
+            text={
+              isTTSEnabled
+                ? Locale.Chat.InputActions.DisableTTSPlugins
+                : Locale.Chat.InputActions.EnableTTSPlugins
             }            
             icon={isTTSEnabled ? <EnableTTSIcon /> : <DisableTTSIcon />}
           />
@@ -1420,11 +1442,7 @@ function _Chat() {
                                 icon={<CopyIcon />}
                                 onClick={() => copyToClipboard(message.content)}
                               />
-                               <ChatAction
-                                text={Locale.Chat.Actions.Play}
-                                icon={<AudioPlayerIcon />}
-                                onClick={() => onPlayMessage(message)}
-                              />
+                            
                             </>
                           )}
                         </div>
@@ -1579,7 +1597,7 @@ function _Chat() {
          )} 
            {isTTSEnabled && (
             <IconButton
-              icon={<EnableTTSIcon />}
+              icon={<EnableSTTIcon />}
               text=" "
               className={styles["chat-input-voice"]}
               type="primary"
