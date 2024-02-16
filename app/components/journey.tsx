@@ -109,10 +109,10 @@ export function Journey() {
       <div className="window-header" data-tauri-drag-region>
         <div className="window-header-title">
           <div className="window-header-main-title">
-            {Locale.Settings.Title}
+            {Locale.Journey.Title}
           </div>
           <div className="window-header-sub-title">
-            {Locale.Settings.SubTitle}
+            {Locale.Journey.SubTitle}
           </div>
         </div>
         <div className="window-actions">

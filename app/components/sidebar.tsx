@@ -8,7 +8,6 @@ import GithubIcon from "../icons/gift.svg";
 import JourneyIcon from "../icons/journey.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
-import CloseIcon from "../icons/close.svg";
 import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
@@ -25,13 +24,12 @@ import {
   MIN_SIDEBAR_WIDTH,
   NARROW_SIDEBAR_WIDTH,
   Path,
-  REPO_URL,
 } from "../constant";
 
 import { Link, useNavigate } from "react-router-dom";
 import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
-import { showConfirm, showToast } from "./ui-lib";
+import { showConfirm } from "./ui-lib";
 import { SearchBar, SearchInputRef } from "./search-bar";
 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
@@ -265,14 +263,15 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
+          
+            <Link to={Path.Journey}>
               <IconButton icon={<JourneyIcon />} shadow />
-            </a>
+            </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<GithubIcon />} shadow />
-            </a>
+            <Link to={Path.Stats}>
+               <IconButton icon={<GithubIcon />} shadow />
+            </Link>
           </div>
         </div>
         <div>
