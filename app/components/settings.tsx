@@ -827,6 +827,22 @@ export function Settings() {
           </ListItem>
 
           <ListItem
+            title={Locale.Settings.EnableTTS.Title}
+            subTitle={Locale.Settings.EnableTTS.SubTitle}
+          >
+            <input
+              type="checkbox"
+              checked={config.enableTTS}
+              onChange={(e) =>
+                updateConfig(
+                  (config) =>
+                    (config.enableTTS = e.currentTarget.checked),
+                )
+              }
+            ></input>
+          </ListItem>
+
+          <ListItem
             title={Locale.Settings.SendPreviewBubble.Title}
             subTitle={Locale.Settings.SendPreviewBubble.SubTitle}
           >

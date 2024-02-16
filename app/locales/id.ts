@@ -116,6 +116,10 @@ const id: PartialLocaleType = {
   Settings: {
     Title: "Pengaturan",
     SubTitle: "Semua Pengaturan",
+    EnableTTS: {
+      Title: "Enable Voice",
+      SubTitle: "Send Voice Message"
+    }, 
     Danger: {
       Reset: {
         Title: "Setel Ulang Semua Pengaturan",

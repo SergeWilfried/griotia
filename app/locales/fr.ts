@@ -87,6 +87,10 @@ const fr: PartialLocaleType = {
   Settings: {
     Title: "Paramètres",
     SubTitle: "Toutes les configurations",
+    EnableTTS: {
+      Title: "Activer la voix",
+      SubTitle: "Activer pour envoyer des messages vocaux"
+    }, 
     Danger: {
       Reset: {
         Title: "Restaurer les paramètres",

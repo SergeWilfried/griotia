@@ -54,7 +54,15 @@
     }
   }
 }
+.chat-input-voice {
+  background-color: var(--primary);
+  color: white;
 
+  position: absolute;
+  // right: 100px;
+  right: 30px;
+  bottom: 32px;
+}
 .prompt-toast {
   position: absolute;
   bottom: -50px;

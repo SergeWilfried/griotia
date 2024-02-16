@@ -114,6 +114,10 @@ const bn: PartialLocaleType = {
   Settings: {
     Title: "সেটিংস",
     SubTitle: "সমস্ত সেটিংস",
+    EnableTTS: {
+      Title: "Enable Voice",
+      SubTitle: "Send Voice Message"
+    }, 
     Danger: {
       Reset: {
         Title: "সমস্ত সেটিংস পুনঃনির্দেশ দিন",

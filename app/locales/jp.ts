@@ -97,6 +97,10 @@ const jp: PartialLocaleType = {
   Settings: {
     Title: "設定",
     SubTitle: "設定オプション",
+    EnableTTS: {
+      Title: "Enable Voice",
+      SubTitle: "Send Voice Message"
+    }, 
     Danger: {
       Reset: {
         Title: "設定をリセット",

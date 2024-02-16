@@ -131,6 +131,10 @@ const pt: PartialLocaleType = {
   Settings: {
     Title: "Configurações",
     SubTitle: "Todas as Configurações",
+    EnableTTS: {
+      Title: "Enable Voice",
+      SubTitle: "Send Voice Message"
+    }, 
     Danger: {
       Reset: {
         Title: "Resetar Todas as Configurações",

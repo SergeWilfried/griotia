@@ -131,7 +131,10 @@ const cn = {
   Settings: {
     Title: "设置",
     SubTitle: "所有设置选项",
-
+    EnableTTS: {
+      Title: "Enable Voice",
+      SubTitle: "Send Voice Message"
+    }, 
     Danger: {
       Reset: {
         Title: "重置所有设置",

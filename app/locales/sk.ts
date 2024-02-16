@@ -134,6 +134,10 @@ const sk: PartialLocaleType = {
   Settings: {
     Title: "Nastavenia",
     SubTitle: "Všetky nastavenia",
+    EnableTTS: {
+      Title: "Enable Voice",
+      SubTitle: "Send Voice Message"
+    }, 
     Danger: {
       Reset: {
         Title: "Resetovať všetky nastavenia",
