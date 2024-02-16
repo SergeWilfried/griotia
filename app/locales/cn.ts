@@ -132,6 +132,14 @@ const cn = {
     Revert: "撤销",
     Search: "搜索聊天",
   },
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Settings: {
     Title: "设置",
     SubTitle: "所有设置选项",

@@ -16,6 +16,8 @@ export enum Path {
   Home = "/",
   Chat = "/chat",
   Settings = "/settings",
+  Journey = "/journey",
+  Stats = "/stats",
   NewChat = "/new-chat",
   Masks = "/masks",
   Plugins = "/plugins",

@@ -76,6 +76,14 @@ const id: PartialLocaleType = {
       SaveAs: "Simpan sebagai Masks",
     },
   },
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Export: {
     Title: "Ekspor Pesan",
     Copy: "Salin Semua",

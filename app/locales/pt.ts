@@ -6,6 +6,14 @@ const isApp = !!getClientConfig()?.isApp;
 
 const pt: PartialLocaleType = {
   WIP: "Em breve...",
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Error: {
     Unauthorized: isApp
       ? "Chave API inválida, por favor verifique em [Configurações](/#/settings)."

@@ -66,6 +66,14 @@ const fr: PartialLocaleType = {
       SaveAs: "Enregistrer en tant que masque",
     },
   },
+  Stats: {
+    Title: "Recompenses",
+    SubTitle: "Vos recompences",
+  },
+  Journey: {
+    Title: "Mon Parcours",
+    SubTitle: "Votre parcours",
+  },
   Export: {
     Title: "Tous les messages",
     Copy: "Tout sélectionner",

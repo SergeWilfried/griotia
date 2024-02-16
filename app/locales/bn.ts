@@ -18,6 +18,14 @@ const bn: PartialLocaleType = {
   ChatItem: {
     ChatItemCount: (count: number) => `${count} টি বার্তা`,
   },
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Chat: {
     SubTitle: (count: number) => `${count} টি বার্তা`,
     Actions: {
@@ -42,6 +50,7 @@ const bn: PartialLocaleType = {
       clear: "সংশ্লিষ্টতাবদ্ধকরণ পরিষ্কার করুন",
       del: "চ্যাট মুছুন",
     },
+    
     InputActions: {
       Stop: "বন্ধ করুন",
       ToBottom: "সর্বশেষতম দিকে",

@@ -3,6 +3,14 @@ import type { PartialLocaleType } from "./index";
 
 const tr: PartialLocaleType = {
   WIP: "Çalışma devam ediyor...",
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Error: {
     Unauthorized:
       "Yetkisiz erişim, lütfen erişim kodunu ayarlar [sayfasından](/#/auth) giriniz.",
