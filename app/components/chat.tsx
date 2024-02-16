@@ -470,9 +470,6 @@ export function ChatActions(props: {
     config.update((config) => (config.enableTTS = !isSTTEnabled));
   }
 
-  function enableVoicePlugins(){
-    config.update((config) => (config.enableTTS = !isTTSEnabled));
-  }
 
   // switch themes
   const theme = config.theme;
