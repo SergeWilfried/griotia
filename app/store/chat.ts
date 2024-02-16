@@ -63,7 +63,8 @@ export interface ChatSession {
   lastUpdate: number;
   lastSummarizeIndex: number;
   clearContextIndex?: number;
-
+  enableTTS: boolean;
+  enableSTT: boolean;
   mask: Mask;
 }
 
@@ -88,6 +89,8 @@ function createEmptySession(): ChatSession {
     lastSummarizeIndex: 0,
 
     mask: createEmptyMask(),
+    enableSTT: false,
+    enableTTS: false
   };
 }
 
