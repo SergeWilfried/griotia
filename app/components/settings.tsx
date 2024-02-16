@@ -848,16 +848,21 @@ export function Settings() {
                 subTitle={Locale.Settings.VoiceConfig.SubscriptionKey.SubTitle}
               >
     <PasswordInput
-                          value={accessStore.azurespeechsubscriptionKey}
+                          value={config.voice.subscriptionKey}
                           type="text"
                           placeholder={
                             Locale.Settings.Access.Azure.ApiKey.Placeholder
                           }
                           onChange={(e) => {
-                            accessStore.update(
-                              (access) =>
-                                (access.azurespeechsubscriptionKey = e.currentTarget.value),
-                            );
+                            
+                            updateConfig(
+                              (config) =>
+                                (config.voice.subscriptionKey = e.currentTarget.value),
+                            )
+                            updateConfig(
+                              (config) =>
+                                (config.voice.active = true),
+                            )
                           }}
                         />
               </ListItem>
@@ -867,12 +872,13 @@ export function Settings() {
               >
                    <input
                           type="text"
-                          value={accessStore.azurespeech.langName}
+                          value={config.voice.speechRecognitionLanguage}
                           placeholder={Azure.ExampleEndpoint}
                           onChange={(e) =>
-                            accessStore.update(
-                              (access) =>
-                                (access.azurespeech.langName = e.currentTarget.value),
+                      
+                            updateConfig(
+                              (config) =>
+                                (config.voice.speechRecognitionLanguage = e.currentTarget.value),
                             )
                           }
                         ></input>
@@ -883,12 +889,13 @@ export function Settings() {
               >
                      <input
                           type="text"
-                          value={accessStore.azurespeech.voiceName}
+                          value={config.voice.speechSynthesisVoiceName}
                           placeholder={Azure.ExampleEndpoint}
                           onChange={(e) =>
-                            accessStore.update(
-                              (access) =>
-                                (access.azurespeech.voiceName = e.currentTarget.value),
+                           
+                            updateConfig(
+                              (config) =>
+                                (config.voice.speechSynthesisVoiceName = e.currentTarget.value),
                             )
                           }
                         ></input>
