@@ -37,8 +37,7 @@ export const DEFAULT_CONFIG = {
   autoScrollMessage: true,
   enableAutoGenerateTitle: true,
   sidebarWidth: DEFAULT_SIDEBAR_WIDTH,
-  enableTTS: false,
-  enableSTT: false,
+  enableVoiceFeature: false,
   disablePromptHint: false,
 
   dontShowMaskSplashScreen: false, // dont show splash screen when create chat

@@ -5,6 +5,7 @@ import styles from "./home.module.scss";
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
 import GithubIcon from "../icons/gift.svg";
+import JourneyIcon from "../icons/journey.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
@@ -262,6 +263,11 @@ export function SideBar(props: { className?: string }) {
             <Link to={Path.Settings}>
               <IconButton icon={<SettingsIcon />} shadow />
             </Link>
+          </div>
+          <div className={styles["sidebar-action"]}>
+            <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
+              <IconButton icon={<JourneyIcon />} shadow />
+            </a>
           </div>
           <div className={styles["sidebar-action"]}>
             <a href={REPO_URL} target="_blank" rel="noopener noreferrer">

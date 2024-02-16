@@ -461,13 +461,20 @@ export function ChatActions(props: {
       session.mask.usePlugins = !session.mask.usePlugins;
     });
   }
-  const isTTSEnabled = config.enableTTS;
-  const isSTTEnabled = config.enableSTT;
+
+  const isVoiceEnabled = config.enableVoiceFeature;
+  const useTTS = chatStore.currentSession().enableTTS;
+  const useSTT = chatStore.currentSession().enableSTT;
+
   function enableTTSPlugins(){
-    config.update((config) => (config.enableTTS = !isTTSEnabled));
+    chatStore.updateCurrentSession((session) => {
+      session.enableTTS = !session.enableTTS;
+    });  
   }
   function enableSTTPlugins(){
-    config.update((config) => (config.enableTTS = !isSTTEnabled));
+    chatStore.updateCurrentSession((session) => {
+      session.enableSTT = !session.enableSTT;
+    });  
   }
 
 
@@ -638,26 +645,29 @@ export function ChatActions(props: {
               icon={usePlugins ? <EnablePluginIcon /> : <DisablePluginIcon />}
             />
           )}
-        
-          <ChatAction
+          {isVoiceEnabled && (
+            <ChatAction
             onClick={enableSTTPlugins}
             text={
-              isTTSEnabled
+              useSTT
                 ? Locale.Chat.InputActions.DisableSTTPlugins
                 : Locale.Chat.InputActions.EnableSTTPlugins
             }            
-            icon={isTTSEnabled ? <EnableSTTIcon /> : <DisableSTTIcon />}
+            icon={useSTT ? <EnableSTTIcon /> : <DisableSTTIcon />}
           />
-      
+          )}
+          
+          {isVoiceEnabled && (
           <ChatAction
             onClick={enableTTSPlugins}
             text={
-              isTTSEnabled
+              useTTS
                 ? Locale.Chat.InputActions.DisableTTSPlugins
                 : Locale.Chat.InputActions.EnableTTSPlugins
             }            
-            icon={isTTSEnabled ? <EnableTTSIcon /> : <DisableTTSIcon />}
-          />
+            icon={useTTS ? <EnableTTSIcon /> : <DisableTTSIcon />}
+          />)}
+          
         
          {currentModel == "gpt-4-vision-preview" && (
           <ChatAction
@@ -786,7 +796,6 @@ function _Chat() {
   const session = chatStore.currentSession();
   const config = useAppConfig();
   const fontSize = config.fontSize;
-  const isTTSEnabled = config.enableTTS;
   const [showExport, setShowExport] = useState(false);
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -798,7 +807,8 @@ function _Chat() {
   const [hitBottom, setHitBottom] = useState(true);
   const isMobileScreen = useMobileScreen();
   const navigate = useNavigate();
-
+  const useTTS = chatStore.currentSession().enableTTS;
+  const useSTT = chatStore.currentSession().enableSTT;
   // prompt hints
   const promptStore = usePromptStore();
   const [promptHints, setPromptHints] = useState<RenderPompt[]>([]);
@@ -1581,7 +1591,7 @@ function _Chat() {
             </div>
           )}
        
-            {!isTTSEnabled && (
+            {!useSTT && (
             <IconButton
               icon={<SendWhiteIcon />}
               text={Locale.Chat.Send}
@@ -1590,7 +1600,7 @@ function _Chat() {
               onClick={() => doSubmit(userInput, userImage)}
             />
          )} 
-           {isTTSEnabled && (
+           {useSTT && (
             <IconButton
               icon={<EnableSTTIcon />}
               text=""
