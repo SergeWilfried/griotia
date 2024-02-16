@@ -36,6 +36,14 @@ const es: PartialLocaleType = {
       SaveAs: "Save as Mask",
     },
   },
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Export: {
     Title: "Todos los mensajes",
     Copy: "Copiar todo",

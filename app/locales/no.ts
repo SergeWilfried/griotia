@@ -3,6 +3,14 @@ import type { PartialLocaleType } from "./index";
 
 const no: PartialLocaleType = {
   WIP: "Arbeid pågår ...",
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Error: {
     Unauthorized:
       "Du har ikke tilgang. [Vennlig oppgi tildelt adgangskode](/#/auth).",

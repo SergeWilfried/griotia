@@ -3,6 +3,14 @@ import type { PartialLocaleType } from "./index";
 
 const vi: PartialLocaleType = {
   WIP: "Sắp ra mắt...",
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Error: {
     Unauthorized:
       "Truy cập chưa xác thực, vui lòng nhập mã truy cập trong trang cài đặt.",

@@ -3,6 +3,14 @@ import type { PartialLocaleType } from "./index";
 
 const ru: PartialLocaleType = {
   WIP: "Скоро...",
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Error: {
     Unauthorized:
       "Несанкционированный доступ. Пожалуйста, введите код доступа на [странице](/#/auth) настроек.",

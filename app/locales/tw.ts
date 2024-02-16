@@ -3,6 +3,14 @@ import type { PartialLocaleType } from "./index";
 
 const tw: PartialLocaleType = {
   WIP: "該功能仍在開發中……",
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Error: {
     Unauthorized: "目前您的狀態是未授權，請前往[設定頁面](/#/auth)輸入授權碼。",
   },

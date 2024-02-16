@@ -8,6 +8,14 @@ import type { PartialLocaleType } from "./index";
 const isApp = !!getClientConfig()?.isApp;
 const sk: PartialLocaleType = {
   WIP: "Už čoskoro...",
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Error: {
     Unauthorized: isApp
       ? "Neplatný API kľúč, prosím skontrolujte ho na stránke [Nastavenia](/#/settings)."

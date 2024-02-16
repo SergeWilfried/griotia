@@ -7,6 +7,14 @@ const de: PartialLocaleType = {
     Unauthorized:
       "Unbefugter Zugriff, bitte geben Sie den Zugangscode auf der [Einstellungsseite](/#/auth) ein.",
   },
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} Nachrichten`,
   },

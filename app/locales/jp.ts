@@ -10,6 +10,14 @@ const jp: PartialLocaleType = {
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 通のチャット`,
   },
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Chat: {
     SubTitle: (count: number) => `ChatGPTとの ${count} 通のチャット`,
     EditMessage: {

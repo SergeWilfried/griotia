@@ -23,6 +23,14 @@ const en: LocaleType = {
   ChatItem: {
     ChatItemCount: (count: number) => `${count} messages`,
   },
+  Stats: {
+    Title: "Stats",
+    SubTitle: "Your accomplishments and gifts",
+  },
+  Journey: {
+    Title: "Journey",
+    SubTitle: "Summary of your progress",
+  },
   Chat: {
     SubTitle: (count: number) => `${count} messages`,
     EditMessage: {
@@ -44,7 +52,7 @@ const en: LocaleType = {
       PinToastAction: "View",
       Delete: "Delete",
       Edit: "Edit",
-      Play: 'Play'
+      Play: 'Listen'
     },
     Commands: {
       new: "Start a new chat",
@@ -85,7 +93,7 @@ const en: LocaleType = {
     Send: "Send",
     Config: {
       Reset: "Reset to Default",
-      SaveAs: "Save as Mask",
+      SaveAs: "Save as Tutor",
     },
     IsContext: "Contextual Prompt",
   },
@@ -246,7 +254,7 @@ const en: LocaleType = {
     },
     Mask: {
       Splash: {
-        Title: "Mask Splash Screen",
+        Title: "Tutor Splash Screen",
         SubTitle: "Show a mask splash screen before starting new chat",
       },
       Builtin: {
@@ -450,7 +458,7 @@ const en: LocaleType = {
     Sysmessage: "You are an assistant that",
   },
   Mask: {
-    Name: "Mask",
+    Name: "Tutor",
     Page: {
       Title: "Prompt Template",
       SubTitle: (count: number) => `${count} prompt templates`,
@@ -484,7 +492,7 @@ const en: LocaleType = {
         SubTitle: "Do not show in-context prompts in chat",
       },
       Share: {
-        Title: "Share This Mask",
+        Title: "Share This Tutor",
         SubTitle: "Generate a link to this mask",
         Action: "Copy Link",
       },
@@ -493,8 +501,8 @@ const en: LocaleType = {
   NewChat: {
     Return: "Return",
     Skip: "Just Start",
-    Title: "Pick a Mask",
-    SubTitle: "Chat with the Soul behind the Mask",
+    Title: "Pick a Tutor",
+    SubTitle: "Chat with your expert ai powered Tutor",
     More: "Find More",
     NotShow: "Never Show Again",
     ConfirmNoShow: "Confirm to disable? You can enable it in settings later.",

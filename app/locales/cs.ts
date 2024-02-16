@@ -10,6 +10,14 @@ const cs: PartialLocaleType = {
   ChatItem: {
     ChatItemCount: (count: number) => `${count} zpráv`,
   },
+  Stats: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
+  Journey: {
+    Title: "设置",
+    SubTitle: "所有设置选项",
+  },
   Chat: {
     SubTitle: (count: number) => `${count} zpráv s ChatGPT`,
     Actions: {
