@@ -462,7 +462,7 @@ export function ChatActions(props: {
     });
   }
 
-  const isVoiceEnabled = config.voice.enabled;
+  const isVoiceEnabled = config.voice.active;
   const useTTS = chatStore.currentSession().enableTTS;
   const useSTT = chatStore.currentSession().enableSTT;
 
@@ -808,7 +808,7 @@ function _Chat() {
   const isMobileScreen = useMobileScreen();
   const navigate = useNavigate();
   const useTTS = chatStore.currentSession().enableTTS;
-  const useSTT = chatStore.currentSession().enableSTT;
+  const useSTT = config.voice.active && chatStore.currentSession().enableSTT;
   // prompt hints
   const promptStore = usePromptStore();
   const [promptHints, setPromptHints] = useState<RenderPompt[]>([]);

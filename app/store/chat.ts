@@ -376,7 +376,7 @@ export const useChatStore = createPersistStore(
             onFinish(message) {
               botMessage.streaming = false;
               if (message) {
-                if (!message.startsWith("http")) {
+                if (config.voice.active && !message.startsWith("http")) {
                   convertTextToSpeech(message);
                 }
                 botMessage.content = message;
@@ -434,7 +434,7 @@ export const useChatStore = createPersistStore(
             onFinish(message) {
               botMessage.streaming = false;
               if (message) {
-                if (!message.startsWith("http")) {
+                if (config.voice.active && !message.startsWith("http")) {
                   convertTextToSpeech(message);
                 }
                 botMessage.content = message;
