@@ -5,10 +5,11 @@ async function handle(req: NextRequest) {
   if (req.method === "OPTIONS") {
     return NextResponse.json({ body: "OK" }, { status: 200 });
   }
-  const {voice_id, text,use_speaker_boost} = req.body as any
+  const { text,use_speaker_boost } = req.body as any
   const voice_settings = {"similarity_boost":123,"stability":123,"style":123,"use_speaker_boost":use_speaker_boost}
   const model_id = '';
   const version_id = '';
+  const voice_id = '';
   const pronunciation_dictionary_id = '';
   const pronunciation_dictionary_locators = [{"pronunciation_dictionary_id":pronunciation_dictionary_id,"version_id":version_id}];
 
