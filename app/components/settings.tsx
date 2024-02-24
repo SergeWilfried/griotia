@@ -817,7 +817,11 @@ export function Settings() {
           >
             <input
               type="checkbox"
-              checked={config.enableAutoGenerateTitle}
+              disabled={!!process.env.NEXT_PUBLIC_DISABLE_AUTOGENERATETITLE}
+              checked={
+                !process.env.NEXT_PUBLIC_DISABLE_AUTOGENERATETITLE &&
+                config.enableAutoGenerateTitle
+              }
               onChange={(e) =>
                 updateConfig(
                   (config) =>
@@ -1160,7 +1164,7 @@ export function Settings() {
                         <input
                           type="text"
                           value={accessStore.azureApiVersion}
-                          placeholder="2023-08-01-preview"
+                          placeholder="2024-02-15-preview"
                           onChange={(e) =>
                             accessStore.update(
                               (access) =>
@@ -1219,7 +1223,7 @@ export function Settings() {
                         <input
                           type="text"
                           value={accessStore.googleApiVersion}
-                          placeholder="2023-08-01-preview"
+                          placeholder="2024-02-15-preview"
                           onChange={(e) =>
                             accessStore.update(
                               (access) =>
